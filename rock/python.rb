@@ -237,6 +237,7 @@ module Rock
         ws.config.set('python_version', version, true)
 
         ws.osdep_suffixes << "python#{$1}" if version =~ /^([0-9]+)\./
+        puts("PYTHON: #{ws.osdep_suffixes}")
 
         rewrite_python_shims(bin, ws.root_dir)
         rewrite_pip_shims(bin, ws.root_dir)
